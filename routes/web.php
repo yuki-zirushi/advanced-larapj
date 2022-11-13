@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\SessionController;
 
-Route::get('/home', [AuthorController::class, 'index']);
+Route::get('/home', [AuthorController::class, 'index'])->middleware('auth');
 Route::get('/add', [AuthorController::class, 'add']);
 Route::post('/add', [AuthorController::class, 'create']);
 Route::get('/edit', [AuthorController::class, 'edit']);
