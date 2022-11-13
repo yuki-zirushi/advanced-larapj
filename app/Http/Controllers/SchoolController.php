@@ -28,6 +28,7 @@ class SchoolController extends Controller
         $school = new School();
         $uuid = (string)Str::uuid();
         $school::insert([
+            'id' => 20,
             'uuid' =>  $uuid,
             'name' => 'COACHTECH-Lab',
         ]);

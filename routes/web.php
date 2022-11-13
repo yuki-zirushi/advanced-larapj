@@ -49,3 +49,4 @@ Route::get('uuid', function() {
 
 Route::get('fill', [SchoolController::class,'fillSchool']);
 Route::get('create', [SchoolController::class,'createSchool']);
+Route::get('insert', [SchoolController::class, 'insertSchool']);
