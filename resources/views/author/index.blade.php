@@ -15,6 +15,10 @@ td {
   background-color: #EEEEEE;
   text-align: center;
 }
+
+td table tbody tr td {
+  background-color: #EEEEEE !important;
+}
 </style>
 @section('title', 'author.index.blade.php')
 
@@ -30,8 +34,14 @@ td {
       {{$author->getDetail()}}
     </td>
     <td>
-      @if ($author->book != null)
-      {{ $author->book->getTitle() }}
+      @if ($author->books != null)
+      <table width="100%">
+        @foreach ($author->books as $book)
+        <tr>
+          <td>{{ $book->getTitle() }}</td>
+        </tr>
+        @endforeach
+      </table>
       @endif
     </td>
   </tr>
