@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\SessionController;
+use App\Models\Product;
 
 Route::get('/home', [AuthorController::class, 'index'])->middleware('auth');
 Route::get('/add', [AuthorController::class, 'add']);
@@ -37,3 +38,10 @@ require __DIR__.'/auth.php';
 
 Route::get('/auth', [AuthorController::class, 'check']);
 Route::post('/auth', [AuthorController::class, 'checkUser']);
+
+Route::get('uuid', function() {
+    $products = Product::all();
+    foreach($products as $product) {
+        echo $product . '<br>';
+    }
+});
