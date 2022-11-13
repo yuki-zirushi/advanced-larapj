@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SchoolController;
 use App\Models\Product;
 
 Route::get('/home', [AuthorController::class, 'index'])->middleware('auth');
@@ -45,3 +46,6 @@ Route::get('uuid', function() {
         echo $product . '<br>';
     }
 });
+
+Route::get('fill', [SchoolController::class,'fillSchool']);
+Route::get('create', [SchoolController::class,'createSchool']);
